@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" stylesheets="@../styles/coordinatorDashbord.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CoordinatorDashboardController">
+   <top>
+      <MenuBar prefHeight="0.0" prefWidth="2006.0" stylesheets="@../styles/menuStyle.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Format">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleFontSize" text="Font Size" />
+              <MenuItem mnemonicParsing="false" onAction="#handleFontFamily" text="Font Family" />
+              <MenuItem mnemonicParsing="false" onAction="#handleTheme" text="Background Color" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About App" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefWidth="240.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" spacing="10.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label styleClass="logo-text" text="GHADS" />
+                  <Label alignment="CENTER" styleClass="logo-subtext" text="Gaza Humanitarian Aid&#10;Distribution System" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            
+            <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openDashboard" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn-active" text="🏠  Dashboard" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openFamilies" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="👨‍👩‍👧‍👦  Family Management" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openAidDistribution" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="📦  Aid Distribution" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openProfile" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="👤  Profile" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openChangePassword" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🔒  Change Password" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </VBox>
+            
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogout" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🚪  Logout">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   
+   <center>
+      <VBox styleClass="main-content" BorderPane.alignment="CENTER">
+         <children>
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="top-bar">
+               <children>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="page-title" text="Coordinator Dashboard" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label style="-fx-text-fill: gray; -fx-font-size: 14;" text="Welcome," />
+                              <Label fx:id="lblWelcomeName" style="-fx-text-fill: #003366; -fx-font-weight: bold; -fx-font-size: 16;" text="Ahmed Hassan" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" spacing="8.0" styleClass="profile-box">
+                           <children>
+                              <Circle fill="#003366" radius="19.0" stroke="TRANSPARENT" />
+                              <VBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label fx:id="lblCoordinatorName" style="-fx-font-weight: bold; -fx-font-size: 15;" text="coordinator" />
+                                    <Label fx:id="lblWelcomeName" style="-fx-text-fill: gray; -fx-font-size: 13;" text="Coordinator" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <GridPane alignment="CENTER" hgap="20.0" prefHeight="196.0" prefWidth="1220.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="33.3" />
+                  <ColumnConstraints percentWidth="33.3" />
+                  <ColumnConstraints percentWidth="33.3" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="100.0" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="156.0" prefWidth="362.0" spacing="20.0" styleClass="quick-action-card" GridPane.columnIndex="0">
+                     <children> 
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="stat-title" text="Total Families" />
+                              <Label fx:id="lblTotalFamilies" styleClass="stat-number" text="1,250" />
+                              <Label prefHeight="19.0" prefWidth="207.0" styleClass="coord-stat-sub" text="Registered in the system" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding><Insets left="20.0" /></padding>
+                  </HBox>
+                  
+                  <HBox alignment="CENTER" prefHeight="197.0" prefWidth="394.0" spacing="20.0" styleClass="quick-action-card" GridPane.columnIndex="1">
+                     <children> 
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label styleClass="stat-title" text="Families Served" />
+                              <Label fx:id="lblFamiliesServed" style="-fx-text-fill: #137333;" styleClass="stat-number" text="780" />
+                              <Label styleClass="coord-stat-sub" text="By your organization" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding><Insets left="20.0" /></padding>
+                  </HBox>
+                  
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="360.0" spacing="20.0" styleClass="quick-action-card" GridPane.columnIndex="2">
+                     <children> 
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="220.0">
+                           <children>
+                              <Label styleClass="stat-title" text="Not Served Yet" />
+                              <Label fx:id="lblNotServed" style="-fx-text-fill: #b06000;" styleClass="stat-number" text="470" />
+                              <Label prefHeight="19.0" prefWidth="262.0" styleClass="coord-stat-sub" text="Not served by any organization" />
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding><Insets left="20.0" /></padding>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+            </GridPane>
+            
+        
+            
+            <HBox spacing="20.0" VBox.vgrow="NEVER">
+               <children>
+                  
+                  <VBox prefHeight="238.0" prefWidth="1220.0" styleClass="content-card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="section-title" text="Quick Actions" />
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox fx:id="quickManageFamilies" alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="274.0" styleClass="quick-action-card" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label style="-fx-font-weight: bold; -fx-font-size: 16;" text="Manage Families" />
+                                          <Label style="-fx-text-fill: gray; -fx-font-size: 10px;" text="Add and manage families" />
+                                       </children>
+                                       <padding><Insets left="8.0" /></padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="quickDistributeAid" alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="255.0" styleClass="quick-action-card" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT">
+                                       <children>
+                                          <Label style="-fx-font-weight: bold; -fx-font-size: 16;" text="Distribute Aid" />
+                                          <Label style="-fx-text-fill: gray; -fx-font-size: 10px;" text="Record new aid distribution" />
+                                       </children>
+                                       <padding><Insets left="8.0" /></padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="202.0" prefWidth="983.0">
+               <children>
+                  
+                  <VBox prefHeight="202.0" prefWidth="1359.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="8.0">
+                           <children>
+                              <Label contentDisplay="CENTER" style="-fx-font-size: 16px;" text="💡" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="58.0" styleClass="tip-title" text="Tip">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="112.0" prefWidth="1294.0" text="Use the Family Management to register new families and keep the data up to date." textAlignment="CENTER" wrapText="true" />
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <HBox alignment="CENTER" prefHeight="35.0" styleClass="footer-bar">
+               <children>
+                  <Label style="-fx-text-fill: gray; -fx-font-size: 11px;" text="💙 Together, we can make a difference." />
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: #003366; -fx-font-weight: bold; -fx-font-size: 11px;" text="معاً نستطيع أن نصنع فرقاً 💙" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,147 @@
+/* الألوان والتنسيقات العامة */
+.root {
+-fx-font-family: "Bookman Old Style";
+-fx-font-size: 16px;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+-fx-background-color: #0f3460;
+-fx-padding: 10px;
+}
+
+.logo-text {
+-fx-text-fill: white;
+-fx-font-size: 34px;
+-fx-font-weight: bold;
+}
+
+.logo-subtext {
+-fx-text-fill: #d6e4f0;
+-fx-font-size: 16px;
+}
+
+/* أزرار السايدبار */
+.sidebar-btn {
+-fx-background-color: transparent;
+-fx-text-fill: white;
+-fx-font-size: 16px;
+-fx-border-radius: 5px;
+-fx-cursor: hand;
+}
+
+.sidebar-btn:hover {
+-fx-background-color: #1b4f8a;
+}
+
+.sidebar-btn-active {
+-fx-background-color: #082032;
+-fx-text-fill: white;
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+-fx-background-radius: 8px;
+}
+
+/* المنطقة الرئيسية */
+.main-content {
+-fx-background-color: #f5f7fb;
+}
+
+.top-bar {
+-fx-background-color: transparent;
+}
+
+.menu-toggle-btn {
+-fx-background-color: transparent;
+-fx-font-size: 24px;
+-fx-cursor: hand;
+}
+
+.icon-btn {
+-fx-background-color: transparent;
+-fx-font-size: 18px;
+-fx-cursor: hand;
+}
+
+.header-title {
+-fx-font-size: 30px;
+-fx-font-weight: bold;
+-fx-text-fill: #082032;
+}
+
+.date-badge {
+-fx-background-color: white;
+-fx-padding: 10px 18px 10px 18px;
+-fx-background-radius: 8px;
+-fx-text-fill: #2c3e50;
+-fx-font-size: 16px;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 2);
+}
+
+/* كروت الإحصائيات */
+.stat-card {
+-fx-background-color: white;
+-fx-background-radius: 12px;
+-fx-padding: 18px;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+.stat-number {
+-fx-font-size: 26px;
+-fx-font-weight: bold;
+-fx-text-fill: #082032;
+}
+
+.stat-label {
+-fx-font-size: 22px;
+-fx-text-fill: #555555;
+-fx-font-family: "Bookman Old Style";
+-fx-font-weight: bold;
+}
+
+.stat-view-all {
+-fx-text-fill: #0f3460;
+-fx-font-size: 15px;
+-fx-font-weight: bold;
+-fx-cursor: hand;
+}
+
+/* كروت المحتوى */
+.content-card {
+-fx-background-color: white;
+-fx-background-radius: 12px;
+-fx-padding: 20px;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);
+}
+
+.section-title {
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+-fx-text-fill: #082032;
+}
+
+/* عناصر الإجراءات السريعة */
+.action-item-box {
+-fx-border-color: #dce6f2;
+-fx-border-radius: 10px;
+-fx-padding: 14px;
+-fx-cursor: hand;
+}
+
+.action-item-box:hover {
+-fx-background-color: #eef4fb;
+}
+
+/* التوزيعات الأخيرة */
+.recent-dist-row {
+-fx-padding: 10px 0 10px 0;
+-fx-border-color: transparent transparent #dce6f2 transparent;
+-fx-border-width: 0 0 1 0;
+}
+
+/* الفوتر */
+.footer-bar {
+-fx-background-color: #e8f1fa;
+-fx-background-radius: 10px;
+-fx-padding: 12px 20px 12px 20px;
+}

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" stylesheets="@../styles/familyStyle.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FamilyController">
+   <top>
+      <MenuBar stylesheets="@../styles/menuStyle.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Format">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleFontSize" text="Font Size" />
+              <MenuItem mnemonicParsing="false" onAction="#handleFontFamily" text="Font Family" />
+              <MenuItem mnemonicParsing="false" onAction="#handleTheme" text="Background Color" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About App" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefWidth="240.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" spacing="10.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label styleClass="logo-text" text="GHADS" />
+                  <Label alignment="CENTER" styleClass="logo-subtext" text="Gaza Humanitarian Aid&#10;Distribution System" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            
+            <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openDashboard" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🏠  Dashboard" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openOrganizations" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🏢  Organizations" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openUsers" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="👤  Users" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openFamilies" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn-active" text="👪  Families" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openAidDistribution" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="📦  Aid Distribution" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openChangePassword" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🔒  Change Password" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </VBox>
+            
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogout" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🚪  Logout">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   
+   <center>
+      <VBox styleClass="main-content" BorderPane.alignment="CENTER">
+         <children>
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="top-bar">
+               <children>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="page-title" text="Families Management" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label style="-fx-text-fill: gray; -fx-font-size: 15;" text="Dashboard" />
+                              <Label prefHeight="22.0" prefWidth="13.0" style="-fx-text-fill: gray; -fx-font-size: 18;" text="&gt;" />
+                              <Label style="-fx-text-fill: #004ba0; -fx-font-size: 15; -fx-font-weight: bold;" text="Families" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="53.0" styleClass="top-icon-btn" text="🔔" />
+                        <HBox alignment="CENTER" spacing="8.0" styleClass="profile-box">
+                           <children>
+                              <Circle fill="#004ba0" radius="21.0" stroke="TRANSPARENT" />
+                              <VBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <Label fx:id="lblUserName" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="System Admin" />
+                                    <Label fx:id="lblRole" style="-fx-text-fill: gray; -fx-font-size: 13;" text="Administrator" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <VBox styleClass="content-card">
+               <children>
+                  <Label styleClass="section-title" text="👨‍👩‍👧‍👦 Family Information" />
+                  <GridPane hgap="20.0" vgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="33.3" />
+                        <ColumnConstraints percentWidth="33.3" />
+                        <ColumnConstraints percentWidth="33.3" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="25.0" />
+                        <RowConstraints minHeight="35.0" />
+                        <RowConstraints minHeight="25.0" />
+                        <RowConstraints minHeight="35.0" />
+                        <RowConstraints minHeight="25.0" />
+                        <RowConstraints minHeight="35.0" />
+                     </rowConstraints>
+                     <children>
+                        <Label styleClass="input-label" text="Household Name *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtHouseholdName" promptText="Enter household name" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        
+                        <Label styleClass="input-label" text="National ID *" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtNationalId" promptText="Enter national ID" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label styleClass="input-label" text="Phone Number" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtPhone" promptText="Enter phone number" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        
+                        <Label styleClass="input-label" text="Location *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtLocation" promptText="Enter location" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        
+                        <Label styleClass="input-label" text="Family Size *" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Spinner fx:id="spFamilySize" prefWidth="300.0" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        
+                        <Label styleClass="input-label" text="Vulnerability Level *" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbVulnerability" prefWidth="300.0" promptText="-- Select Level --" styleClass="form-input" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        
+                        <Label styleClass="input-label" text="Registration Date" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="dpRegistrationDate" prefWidth="300.0" promptText="2025-05-25" styleClass="form-input" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        
+                        <Label styleClass="input-label" text="Last Aid Date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="dpLastAidDate" prefWidth="300.0" promptText="Select last aid date" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleAddFamily" styleClass="btn-primary" text="➕ Add" />
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleUpdateFamily" styleClass="btn-secondary" text="📝 Update" />
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleDeleteFamily" styleClass="btn-delete" text="🗑️ Delete" />
+                        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#handleClear" styleClass="btn-secondary" text="🔄 Clear" />
+                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#handleRefresh" styleClass="btn-refresh" text="🔄 Refresh" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </VBox>
+            
+            <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="section-title" text="👥 Families List" HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="txtSearch" onKeyReleased="#handleSearch" prefWidth="320.0" promptText="🔍 Search by name, national ID, or location..." styleClass="search-input" />
+                              <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleSearch" styleClass="btn-search" text="Search" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  
+                  <TableView fx:id="familiesTable" prefHeight="100.0" prefWidth="1000.0" styleClass="custom-table" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="colFamilyId" prefWidth="50.0" text="ID" />
+                      <TableColumn fx:id="colHouseholdName" prefWidth="160.0" text="Household Name" />
+                      <TableColumn fx:id="colNationalId" prefWidth="110.0" text="National ID" />
+                      <TableColumn fx:id="colPhone" prefWidth="136.79998779296875" text="Phone Number" />
+                      <TableColumn fx:id="colLocation" prefWidth="124.0" text="Location" />
+                      <TableColumn fx:id="colFamilySize" prefWidth="132.79998779296875" text="Family Size" />
+                      <TableColumn fx:id="colVulnerability" prefWidth="133.59991455078125" text="Vulnerability" />
+                      <TableColumn fx:id="colRegistrationDate" minWidth="0.0" prefWidth="20.7999267578125" text="Reg. Date" />
+                      <TableColumn fx:id="colLastAidDate" prefWidth="160.0" text="Last Aid Date" />
+                      <TableColumn fx:id="colActions" prefWidth="150.39990234375" text="Actions" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+            
+            <HBox alignment="CENTER" prefHeight="35.0" styleClass="footer-bar">
+               <children>
+                  <Label style="-fx-text-fill: gray; -fx-font-size: 11px;" text="💙 Together, we can make a difference." />
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: #004ba0; -fx-font-weight: bold; -fx-font-size: 11px;" text="معاً نستطيع أن نصنع فرقاً 💙" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

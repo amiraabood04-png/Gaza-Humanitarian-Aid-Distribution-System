@@ -1,0 +1,275 @@
+.root {
+-fx-font-family: "Bookman Old Style";
+-fx-font-size: 16px;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+-fx-background-color: #0f3460;
+-fx-padding: 12px;
+}
+
+.logo-text {
+-fx-text-fill: white;
+-fx-font-size: 34px;
+-fx-font-weight: bold;
+}
+
+.logo-subtext {
+-fx-text-fill: #d6e4f0;
+-fx-font-size: 16px;
+}
+
+/* أزرار السايدبار */
+.sidebar-btn {
+-fx-background-color: transparent;
+-fx-text-fill: white;
+-fx-font-size: 16px;
+-fx-cursor: hand;
+-fx-background-radius: 8px;
+}
+
+.sidebar-btn:hover {
+-fx-background-color: #1b4f8a;
+}
+
+.sidebar-btn-active {
+-fx-background-color: #082032;
+-fx-text-fill: white;
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+-fx-background-radius: 8px;
+}
+
+/* المنطقة الرئيسية */
+.main-content {
+-fx-background-color: #f5f7fb;
+}
+
+.page-title {
+-fx-font-size: 30px;
+-fx-font-weight: bold;
+-fx-text-fill: #082032;
+}
+
+/* البطاقات */
+.content-card {
+-fx-background-color: white;
+-fx-background-radius: 15px;
+-fx-padding: 20px;
+
+
+-fx-effect: dropshadow(
+    gaussian,
+    rgba(0,0,0,0.08),
+    12,
+    0,
+    0,
+    3
+);
+
+
+}
+
+.section-title {
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+-fx-text-fill: #082032;
+}
+
+/* Labels */
+.input-label {
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+-fx-text-fill: #2c3e50;
+}
+
+/* TextFields */
+.form-input,
+.search-input {
+
+
+-fx-background-color: white;
+
+-fx-border-color: #d6dde5;
+-fx-border-radius: 8px;
+
+-fx-background-radius: 8px;
+
+-fx-padding: 10px;
+
+-fx-font-size: 16px;
+
+
+}
+
+.form-input:focused,
+.search-input:focused {
+
+-fx-border-color: #0f3460;
+-fx-border-width: 2px;
+
+
+}
+
+/* Add Button */
+.btn-primary {
+
+-fx-background-color: #0f3460;
+
+-fx-text-fill: white;
+
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+
+-fx-background-radius: 8px;
+
+-fx-padding: 10px 20px;
+
+-fx-cursor: hand;
+
+
+}
+
+.btn-primary:hover {
+
+-fx-background-color: #082032;
+
+
+}
+
+/* Update Delete Clear */
+.btn-secondary {
+
+
+-fx-background-color: white;
+
+-fx-text-fill: #2c3e50;
+
+-fx-font-size: 16px;
+
+-fx-border-color: #d6dde5;
+-fx-border-radius: 8px;
+
+-fx-background-radius: 8px;
+
+-fx-padding: 10px 18px;
+
+-fx-cursor: hand;
+
+
+}
+
+.btn-secondary:hover {
+
+
+-fx-background-color: #eef4fb;
+
+
+}
+
+/* Refresh */
+.btn-refresh {
+
+
+-fx-background-color: #e8f1fa;
+
+-fx-text-fill: #0f3460;
+
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+
+-fx-background-radius: 8px;
+
+-fx-padding: 10px 18px;
+
+-fx-cursor: hand;
+
+
+}
+.btn-delete {
+    -fx-background-color: white;
+    -fx-text-fill: #b00020;
+    -fx-border-color: #ffb3b3;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 18;
+    -fx-cursor: hand;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #ffe6e6;
+}
+
+/* TableView */
+.custom-table {
+
+
+-fx-background-color: white;
+
+-fx-background-radius: 10px;
+
+-fx-border-color: #e5e9ef;
+-fx-border-radius: 10px;
+
+
+}
+
+.custom-table .column-header {
+
+
+-fx-background-color: #eef4fb;
+
+-fx-font-size: 16px;
+-fx-font-weight: bold;
+
+-fx-text-fill: #082032;
+
+}
+
+.custom-table .table-row-cell {
+
+-fx-font-size: 15px;
+
+}
+
+/* Pagination */
+.btn-page {
+
+
+-fx-background-color: white;
+
+-fx-border-color: #d6dde5;
+
+-fx-background-radius: 5px;
+-fx-border-radius: 5px;
+
+-fx-font-size: 15px;
+
+}
+
+.btn-page-active {
+
+
+-fx-background-color: #0f3460;
+
+-fx-text-fill: white;
+
+-fx-background-radius: 5px;
+
+}
+
+/* Footer */
+.footer-bar {
+
+-fx-background-color: #e8f1fa;
+
+-fx-background-radius: 10px;
+
+-fx-padding: 12px 18px;
+
+-fx-font-size: 15px;
+
+}

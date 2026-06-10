@@ -1,0 +1,18 @@
+.menu-bar {
+    -fx-background-color: #cce2f7; /* أزرق فاتح جداً ناعم بديل للأبيض */
+    -fx-border-color: transparent transparent #003366 transparent; /* خط سفلي رفيع باللون الأزرق الداكن */
+    -fx-border-width: 0 0 1.5 0;
+    -fx-padding: 5px;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #003366; /* لون نصوص القوائم بالأزرق الداكن */
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+/* تأثير عند تمرير الماوس فوق القائمة */
+.menu-bar .menu:hover {
+    -fx-background-color: #e6f0fa; /* خلفية زرقاء فاتحة جداً عند الهوفر */
+    -fx-background-radius: 4px;
+}

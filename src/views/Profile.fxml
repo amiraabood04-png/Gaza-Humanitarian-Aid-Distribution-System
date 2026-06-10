@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1150.0" stylesheets="@../styles/ProfileStyle.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProfileController">
+   <top>
+      <MenuBar prefHeight="34.0" prefWidth="1150.0" stylesheets="@../styles/menuStyle.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Format">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Font Size" />
+              <MenuItem mnemonicParsing="false" text="Font Family" />
+              <MenuItem mnemonicParsing="false" text="Background Color" />
+            </items>
+          </Menu>
+          
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About App" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefWidth="240.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" spacing="10.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Label styleClass="logo-text" text="GHADS" />
+                  <Label alignment="CENTER" styleClass="logo-subtext" text="Gaza Humanitarian Aid&#10;Distribution System" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            
+            <VBox spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openDashboard" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🏠  Dashboard" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openFamilies" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="👨‍👩‍👧‍👦  Family Management" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openAidDistribution" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="📦  Aid Distribution" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openProfile" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn-active" text="👤  Profile" />
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#openChangePassword" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🔒  Change Password" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </VBox>
+            
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleLogout" prefHeight="45.0" prefWidth="220.0" styleClass="sidebar-btn" text="🚪  Logout">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   
+   <center>
+      <VBox styleClass="main-content" BorderPane.alignment="CENTER">
+         <children>
+            
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="top-bar">
+               <children>
+                  <VBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label styleClass="page-title" text="Profile" />
+                        <HBox alignment="CENTER_LEFT" spacing="5.0">
+                           <children>
+                              <Label style="-fx-text-fill: gray; -fx-font-size: 15;" text="Dashboard" />
+                              <Label style="-fx-text-fill: gray; -fx-font-size: 12px;" text="&gt;" />
+                              <Label style="-fx-text-fill: #003366; -fx-font-size: 13; -fx-font-weight: bold;" text="Profile" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="top-icon-btn" text="🔔" />
+                        <HBox alignment="CENTER" spacing="8.0" styleClass="profile-box">
+                           <children>
+                              <Circle fill="#003366" radius="23.0" stroke="TRANSPARENT" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="123.0">
+                                 <children>
+                                    <Label fx:id="lblCoordinatorName" style="-fx-font-weight: bold; -fx-font-size: 15;" text="coordinator" />
+                                    <Label style="-fx-text-fill: gray; -fx-font-size: 12;" text="Coordinator" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <HBox spacing="20.0" VBox.vgrow="NEVER">
+               <children>
+                  
+                  <VBox styleClass="content-card" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                           <children>
+                              <Label style="-fx-font-size: 16px; -fx-text-fill: #003366;" text="👤" />
+                              <Label styleClass="section-title" text="Personal Information" />
+                           </children>
+                        </HBox>
+                        <VBox style="-fx-background-color: #ced4da; -fx-min-height: 1;" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        
+                        <GridPane hgap="15.0" vgap="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints maxWidth="150.0" minWidth="100.0" prefWidth="120.0" />
+                              <ColumnConstraints hgrow="ALWAYS" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="35.0" />
+                              <RowConstraints minHeight="35.0" />
+                              <RowConstraints minHeight="35.0" />
+                              <RowConstraints minHeight="35.0" />
+                              <RowConstraints minHeight="35.0" />
+                           </rowConstraints>
+                           <children>
+                              <Label styleClass="input-label" text="Full Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                              <TextField fx:id="txtFullName" styleClass="form-input" text="Ahmed Hassan" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                              
+                              <Label styleClass="input-label" text="Username" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtUsername" styleClass="form-input" text="ahmed01" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              
+                              <Label styleClass="input-label" text="Email" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtEmail" styleClass="form-input" text="ahmed@gaza.org" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              
+                              <Label styleClass="input-label" text="Organization" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtOrganization" editable="false" styleClass="form-input-disabled" text="Red Crescent Gaza" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              
+                              <Label styleClass="input-label" text="Role" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                              <TextField fx:id="txtRole" editable="false" styleClass="form-input-disabled" text="COORDINATOR" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        
+                        <HBox alignment="CENTER" spacing="15.0">
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#handleUpdateProfile" styleClass="btn-primary" text="💾 Update Profile" />
+                              <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" styleClass="btn-secondary" text="🔄 Reset" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  
+                  <VBox prefWidth="340.0" styleClass="content-card">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="8.0">
+                           <children>
+                              <Label style="-fx-font-size: 16px; -fx-text-fill: #003366;" text="🛡️" />
+                              <Label styleClass="section-title" text="Account Information" />
+                           </children>
+                        </HBox>
+                        <VBox style="-fx-background-color: #ced4da; -fx-min-height: 1;" VBox.vgrow="NEVER">
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        
+                        <VBox spacing="20.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children> <VBox prefHeight="38.0" prefWidth="162.0">
+                                       <children>
+                                          <Label prefHeight="19.0" prefWidth="121.0" styleClass="info-label-title" text="Username">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                          <Label fx:id="lblSideUsername" styleClass="info-label-value" text="ahmed01" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children> <VBox>
+                                       <children>
+                                          <Label styleClass="info-label-title" text="Member Since">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin></Label>
+                                          <Label styleClass="info-label-value" text="May 25, 2025" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children> <VBox>
+                                       <children>
+                                          <Label styleClass="info-label-title" text="Organization">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font></Label>
+                                          <Label fx:id="lblSideOrganization" styleClass="info-label-value" text="Red Crescent Gaza" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                 <children> <VBox>
+                                       <children>
+                                          <Label styleClass="info-label-title" text="Role">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                          <Label fx:id="lblSideRole" styleClass="info-label-value" text="COORDINATOR" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="security-info-box" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER" prefWidth="50.0">
+                     <children>
+                        <Label style="-fx-font-size: 22px; -fx-text-fill: #1a73e8;" text="ℹ️" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-size: 15; -fx-text-fill: #003366;" text="Keep your information up to date" />
+                        <Label style="-fx-text-fill: gray; -fx-font-size: 12;" text="Ensure your profile information is accurate to help your organization coordinate aid effectively." />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            
+            <HBox alignment="CENTER" prefHeight="35.0" styleClass="footer-bar">
+               <children>
+                  <Label style="-fx-text-fill: gray; -fx-font-size: 11px;" text="💙 Together, we can make a difference." />
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label style="-fx-text-fill: #003366; -fx-font-weight: bold; -fx-font-size: 11px;" text="معاً نستطيع أن نصنع فرقاً 💙" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

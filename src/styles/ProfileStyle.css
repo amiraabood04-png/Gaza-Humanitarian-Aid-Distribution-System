@@ -1,0 +1,178 @@
+.root {
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 16px;
+    -fx-background-color: #f4f7fb;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #003366;
+}
+
+.logo-text {
+-fx-text-fill: white;
+-fx-font-size: 34px;
+-fx-font-weight: bold;
+}
+
+.logo-subtext {
+-fx-text-fill: #d6e4f0;
+-fx-font-size: 16px;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #0b4d8a;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #082032;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+
+/* Main Area */
+.main-content {
+    -fx-background-color: #f4f7fb;
+}
+
+/* Page Title */
+.page-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+}
+
+/* Cards */
+.content-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-padding: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+}
+
+/* Section Title */
+.section-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+}
+
+/* Labels */
+.input-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Text Fields */
+.form-input {
+    -fx-background-color: white;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 16px;
+}
+
+.form-input:focused {
+    -fx-border-color: #003366;
+    -fx-border-width: 2;
+}
+
+/* Read Only Fields */
+.readonly-field {
+    -fx-background-color: #eef4ff;
+    -fx-border-color: #d6e2f5;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 16px;
+}
+
+/* Profile Photo */
+.profile-photo {
+    -fx-stroke: #003366;
+    -fx-stroke-width: 3;
+}
+
+/* User Name */
+.user-name {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+}
+
+/* User Role */
+.user-role {
+    -fx-font-size: 18px;
+    -fx-text-fill: #666666;
+}
+
+/* Buttons */
+.btn-primary {
+    -fx-background-color: #003366;
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 12 25;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #002244;
+}
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-border-color: #003366;
+    -fx-text-fill: #003366;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 12 25;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #eef5ff;
+}
+
+/* Info Box */
+.info-box {
+    -fx-background-color: #eef4ff;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+}
+
+.info-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+}
+
+.info-text {
+    -fx-font-size: 15px;
+    -fx-text-fill: #555555;
+}
+
+/* Footer */
+.footer-bar {
+    -fx-background-color: #eef4ff;
+    -fx-padding: 10;
+}
+
+.footer-text {
+    -fx-text-fill: #003366;
+    -fx-font-size: 15px;
+}
